@@ -45,7 +45,7 @@
       },
       showFileList: {
         get: function () {
-          return this.value !== null && this.value !== ''&& this.value!==undefined;
+          return this.value !== null && this.value !== '' && this.value !== undefined;
         },
         set: function (newValue) {
         }
@@ -63,9 +63,9 @@
           // callback:'',
         },
         dialogVisible: false,
-        useOss:true, //使用oss->true;使用MinIO->false
-        ossUploadUrl:'http://macro-oss.oss-cn-shenzhen.aliyuncs.com',
-        minioUploadUrl:'http://localhost:8080/minio/upload',
+        useOss: false, //使用oss->true;使用MinIO->false
+        ossUploadUrl: 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com',
+        minioUploadUrl: 'http://localhost:8080/learn/api/v1/minio/upload',
       };
     },
     methods: {
@@ -80,7 +80,7 @@
       },
       beforeUpload(file) {
         let _self = this;
-        if(!this.useOss){
+        if (!this.useOss) {
           //不使用oss不需要获取策略
           return true;
         }
@@ -103,11 +103,13 @@
       handleUploadSuccess(res, file) {
         this.showFileList = true;
         this.fileList.pop();
-        let url = this.dataObj.host + '/' + this.dataObj.dir + '/' + file.name;
-        if(!this.useOss){
-          //不使用oss直接获取图片路径
-          url = res.data.url;
+        let url = res.url;
+        console.log(res)
+        if (this.useOss) {
+          //使用oss直接获取图片路径
+          url = this.dataObj.host + '/' + this.dataObj.dir + '/' + file.name;
         }
+        console.log(url)
         this.fileList.push({name: file.name, url: url});
         this.emitInput(this.fileList[0].url);
       }

@@ -135,7 +135,7 @@
     methods: {
       getSelectProductCateList() {
         fetchList(0, {pageSize: 100, pageNum: 1}).then(response => {
-          this.selectProductCateList = response.data.list;
+          this.selectProductCateList = response.data.items;
           this.selectProductCateList.unshift({id: 0, name: '无上级分类'});
         });
       },

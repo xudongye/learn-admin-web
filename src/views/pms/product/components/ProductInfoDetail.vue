@@ -150,7 +150,7 @@
       getBrandList() {
         fetchBrandList({pageNum: 1, pageSize: 100}).then(response => {
           this.brandOptions = [];
-          let brandList = response.data.list;
+          let brandList = response.data.items;
           for (let i = 0; i < brandList.length; i++) {
             this.brandOptions.push({label: brandList[i].name, value: brandList[i].id});
           }

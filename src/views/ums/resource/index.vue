@@ -257,7 +257,7 @@
       },
       getCateList(){
         listAllCate().then(response=>{
-          let cateList = response.data;
+          let cateList = response.data.items;
           for(let i=0;i<cateList.length;i++){
             let cate = cateList[i];
             this.categoryOptions.push({label:cate.name,value:cate.id});
