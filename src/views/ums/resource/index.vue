@@ -251,13 +251,13 @@
         this.listLoading = true;
         fetchList(this.listQuery).then(response => {
           this.listLoading = false;
-          this.list = response.data.list;
-          this.total = response.data.total;
+          this.list = response.data.items;
+          this.total = response.data.totalCount;
         });
       },
       getCateList(){
         listAllCate().then(response=>{
-          let cateList = response.data.items;
+          let cateList = response.data;
           for(let i=0;i<cateList.length;i++){
             let cate = cateList[i];
             this.categoryOptions.push({label:cate.name,value:cate.id});

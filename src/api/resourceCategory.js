@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function listAllCate() {
   return request({
-    url: '/resourceCategory/listAll',
+    url: '/api/v1/mall/resources-cate/listAll',
     method: 'get'
   })
 }

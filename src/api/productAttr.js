@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(cid, params) {
   return request({
-    url: '/api/v1/product-attr/' + cid,
+    url: '/api/v1/mall/product-attr/' + cid,
     method: 'get',
     params: params
   })
@@ -41,7 +41,7 @@ export function getProductAttr(id) {
 
 export function getProductAttrInfo(productCategoryId) {
   return request({
-    url: '/api/v1/product-attr/attrInfos/' + productCategoryId,
+    url: '/api/v1/mall/product-attr/attrInfos/' + productCategoryId,
     method: 'get'
   })
 }

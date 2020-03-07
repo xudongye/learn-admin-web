@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/role/list',
+    url: '/api/v1/mall/roles',
     method: 'get',
     params: params
   })
@@ -42,7 +42,7 @@ export function deleteRole(data) {
 
 export function fetchAllRoleList() {
   return request({
-    url: '/role/listAll',
+    url: '/api/v1/mall/roles/listAll',
     method: 'get'
   })
 }

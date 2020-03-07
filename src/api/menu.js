@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(parentId, params) {
   return request({
-    url: '/menu/list/' + parentId,
+    url: '/api/v1/mall/menus/' + parentId,
     method: 'get',
     params: params
   })

@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/resource/list',
+    url: '/api/v1/mall/resources',
     method: 'get',
     params: params
   })
