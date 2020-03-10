@@ -49,7 +49,7 @@ export function updatePublishStatus(params) {
 
 export function createProduct(data) {
   return request({
-    url:'/product/create',
+    url:'/api/v1/mall/new-products',
     method:'post',
     data:data
   })

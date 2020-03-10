@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-  import {policy} from '@/api/oss'
+  import {policy} from '@/api/oss';
 
   export default {
     name: 'singleUpload',
@@ -65,7 +65,7 @@
         dialogVisible: false,
         useOss: false, //使用oss->true;使用MinIO->false
         ossUploadUrl: 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com',
-        minioUploadUrl: 'http://www.kuanghuan.shop/learn/api/v1/minio/upload',
+        minioUploadUrl: process.env.BASE_API +'/api/v1/minio/upload',
       };
     },
     methods: {

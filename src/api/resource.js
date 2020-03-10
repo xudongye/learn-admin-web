@@ -33,7 +33,7 @@ export function deleteResource(id) {
 
 export function fetchAllResourceList() {
   return request({
-    url: '/resource/listAll',
+    url: '/api/v1/mall/resources/listAll',
     method: 'get'
   })
 }

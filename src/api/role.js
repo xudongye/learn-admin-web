@@ -49,14 +49,14 @@ export function fetchAllRoleList() {
 
 export function listMenuByRole(roleId) {
   return request({
-    url: '/role/listMenu/'+roleId,
+    url: '/api/v1/mall/roles/withMenu/'+roleId,
     method: 'get'
   })
 }
 
 export function listResourceByRole(roleId) {
   return request({
-    url: '/role/listResource/'+roleId,
+    url: '/api/v1/mall/roles/withResource/'+roleId,
     method: 'get'
   })
 }

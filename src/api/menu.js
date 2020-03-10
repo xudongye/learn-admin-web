@@ -48,7 +48,7 @@ export function updateHidden(id, params) {
 
 export function fetchTreeList() {
   return request({
-    url: '/menu/treeList',
+    url: '/api/v1/mall/menus/treeList',
     method: 'get'
   })
 }
