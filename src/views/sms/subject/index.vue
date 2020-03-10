@@ -429,8 +429,8 @@
       },
       getDialogList(){
         fetchSubjectList(this.dialogData.listQuery).then(response=>{
-          this.dialogData.list=response.data.list;
-          this.dialogData.total=response.data.total;
+          this.dialogData.list=response.data.items;
+          this.dialogData.total=response.data.totalCount;
         })
       }
     }

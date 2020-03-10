@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 export function fetchList(params) {
   return request({
-    url:'/home/advertise/list',
+    url:'/api/v1/mall/home-advertises',
     method:'get',
     params:params
   })
@@ -29,7 +29,7 @@ export function createHomeAdvertise(data) {
 }
 export function getHomeAdvertise(id) {
   return request({
-    url:'/home/advertise/'+id,
+    url:'/api/v1/mall/home-advertises/'+id,
     method:'get',
   })
 }
