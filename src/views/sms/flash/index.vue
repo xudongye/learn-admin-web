@@ -282,8 +282,8 @@
         this.listLoading = true;
         fetchList(this.listQuery).then(response => {
           this.listLoading = false;
-          this.list = response.data.list;
-          this.total = response.data.total;
+          this.list = response.data.items;
+          this.total = response.data.totalCount;
         });
       }
     }
