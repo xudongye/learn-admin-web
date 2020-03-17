@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(loginLabel, password) {
   return request({
-    url: '/api/v1/admin/tokens',
+    url: '/learn/api/v1/admin/tokens',
     method: 'post',
     data: {
       loginLabel,
@@ -13,21 +13,21 @@ export function login(loginLabel, password) {
 
 export function getInfo() {
   return request({
-    url: '/api/v1/mall/admins/info',
+    url: '/learn/api/v1/mall/admins/info',
     method: 'get',
   })
 }
 
 export function logout() {
   return request({
-    url: '/api/v1/admin/tokens',
+    url: '/learn/api/v1/admin/tokens',
     method: 'delete'
   })
 }
 
 export function fetchList(params) {
   return request({
-    url: '/api/v1/mall/admins',
+    url: '/learn/api/v1/mall/admins',
     method: 'get',
     params: params
   })
@@ -66,7 +66,7 @@ export function deleteAdmin(id) {
 
 export function getRoleByAdmin(id) {
   return request({
-    url: '/api/v1/mall/admins/withRole/' + id,
+    url: '/learn/api/v1/mall/admins/withRole/' + id,
     method: 'get'
   })
 }
