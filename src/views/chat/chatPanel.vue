@@ -32,7 +32,7 @@
           </div>
           <div class="chat-message chat-message-left">
             <div class="chat-msg-text">
-              <div class="msg-img"><img src="../../assets/images/404.png" alt=""></div>
+              <el-image fit="contain" class="msg-img" :preview-src-list="srcList" :src="url"></el-image>
             </div>
           </div>
           <div class="chat-message chat-message-left">
@@ -87,8 +87,8 @@
       <div class="chat-messagebar">
         <input type="text" class="input-msg">
         <div class="send-btn">
-          <i class="el-icon-paperclip send-attach"></i>
-          <i class="el-icon-s-promotion"></i>
+          <chat-upload @watchPercent="getUploadPercent" @backFile="getUploadFile"></chat-upload>
+          <i class="el-icon-s-promotion send-icon"></i>
         </div>
       </div>
     </div>
@@ -96,8 +96,27 @@
 </template>
 
 <script>
+import chatUpload from './chatUpload'
 export default {
-  
+  components: {
+    chatUpload
+  },
+  data() {
+    return {
+      url: require('../../assets/images/404.png'),
+      srcList: [this.url]
+    }
+  },
+  methods: {
+    // 返回上传进度
+    getUploadPercent(percent) {
+      console.log(percent)
+    },
+    // 返回上传的文件信息
+    getUploadFile(file) {
+      console.log(file)
+    }
+  }
 }
 </script>
 
@@ -227,12 +246,14 @@ $border-color: rgba(0, 0, 0, 0.03);
     color: #8A98AC;
   }
   .send-btn {
-    i {
+    display: flex;
+    align-items: center;
+    .send-icon {
       font-size: 24px;
       color: #4c595f;
-    }
-    .send-attach {
-      margin-right: 10px;
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 10px;
     }
   }
 }

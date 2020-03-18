@@ -11,8 +11,9 @@
           <div class="friend-item">
             <div class="head-icon"><svg-icon icon-class="friend-icon" class="friend-icon"></svg-icon></div>
             <div class="user-info">
-              <div>
-                <h5>Johenn no</h5>
+              <div class="user-top">
+                <h5>Johenn no <span class="badge-num">5</span></h5>
+                <time>02:30</time>
               </div>
               <p>sdhasdhahhhas</p>
             </div>
@@ -64,9 +65,27 @@
   }
   .user-info {
     word-break: break-word;
-    h5 {
-      font-size: 15px;
-      margin-bottom: 5px;
+    flex: 1;
+    .user-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h5 {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      time {
+        color: #8A98AC;
+        font-size: 12px;
+      }
+      .badge-num {
+        display: inline-block;
+        font-size: 12px;
+        padding: 3px 6px;
+        background: #409EFF;
+        border-radius: 3px;
+        color: #ffffff;
+      }
     }
     p {
       font-size: 14px;

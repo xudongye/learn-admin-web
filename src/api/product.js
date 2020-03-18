@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 export function fetchList(params) {
   return request({
-    url:'/api/v1/mall/new-products',
+    url:'/learn/api/v1/mall/new-products',
     method:'get',
     params:params
   })
@@ -49,7 +49,7 @@ export function updatePublishStatus(params) {
 
 export function createProduct(data) {
   return request({
-    url:'/api/v1/mall/new-products',
+    url:'/learn/api/v1/mall/new-products',
     method:'post',
     data:data
   })

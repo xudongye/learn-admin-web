@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(parentId, params) {
   return request({
-    url: '/api/v1/mall/product-category/' + parentId,
+    url: '/learn/api/v1/mall/product-category/' + parentId,
     method: 'get',
     params: params
   })
@@ -17,7 +17,7 @@ export function deleteProductCate(id) {
 
 export function createProductCate(data) {
   return request({
-    url: '/api/v1/mall/product-category',
+    url: '/learn/api/v1/mall/product-category',
     method: 'post',
     data: data
   })
@@ -25,7 +25,7 @@ export function createProductCate(data) {
 
 export function updateProductCate(id, data) {
   return request({
-    url: '/api/v1/product-category/' + id,
+    url: '/learn/api/v1/product-category/' + id,
     method: 'post',
     data: data
   })
@@ -33,7 +33,7 @@ export function updateProductCate(id, data) {
 
 export function getProductCate(id) {
   return request({
-    url: '/api/v1/mall/product-category/info/' + id,
+    url: '/learn/api/v1/mall/product-category/info/' + id,
     method: 'get',
   })
 }
@@ -56,7 +56,7 @@ export function updateNavStatus(data) {
 
 export function fetchListWithChildren() {
   return request({
-    url: '/api/v1/mall/product-category/withCateChildren',
+    url: '/learn/api/v1/mall/product-category/withCateChildren',
     method: 'get'
   })
 }

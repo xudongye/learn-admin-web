@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(parentId, params) {
   return request({
-    url: '/api/v1/mall/menus/' + parentId,
+    url: '/learn/api/v1/mall/menus/' + parentId,
     method: 'get',
     params: params
   })
@@ -48,7 +48,7 @@ export function updateHidden(id, params) {
 
 export function fetchTreeList() {
   return request({
-    url: '/api/v1/mall/menus/treeList',
+    url: '/learn/api/v1/mall/menus/treeList',
     method: 'get'
   })
 }

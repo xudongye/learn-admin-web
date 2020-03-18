@@ -12,11 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     staticPath: '/static/',
     proxyTable: {
-      '/api':{
-        target:'http://www.kuanghuan.shop/learn',
+      '/learn':{
+        target:'http://www.kuanghuan.shop',
         changeOrigin:true,
         pathRewrite:{
-          '^/api':'/api/'
+          '^/learn':'/learn/'
         }
       }
     },

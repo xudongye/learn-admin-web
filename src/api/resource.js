@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/api/v1/mall/resources',
+    url: '/learn/api/v1/mall/resources',
     method: 'get',
     params: params
   })
@@ -33,7 +33,7 @@ export function deleteResource(id) {
 
 export function fetchAllResourceList() {
   return request({
-    url: '/api/v1/mall/resources/listAll',
+    url: '/learn/api/v1/mall/resources/listAll',
     method: 'get'
   })
 }

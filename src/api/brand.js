@@ -1,14 +1,14 @@
 import request from '@/utils/request'
 export function fetchList(params) {
   return request({
-    url:'/api/v1/mall/product-brands',
+    url:'/learn/api/v1/mall/product-brands',
     method:'get',
     params:params
   })
 }
 export function createBrand(data) {
   return request({
-    url:'/api/v1/mall/product-brands',
+    url:'/learn/api/v1/mall/product-brands',
     method:'post',
     data:data
   })
@@ -38,14 +38,14 @@ export function deleteBrand(id) {
 
 export function getBrand(id) {
   return request({
-    url:'/api/v1/mall/product-brands/'+id,
+    url:'/learn/api/v1/mall/product-brands/'+id,
     method:'get',
   })
 }
 
 export function updateBrand(id,data) {
   return request({
-    url:'/api/v1/mall/product-brands/'+id,
+    url:'/learn/api/v1/mall/product-brands/'+id,
     method:'post',
     data:data
   })

@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/api/v1/mall/roles',
+    url: '/learn/api/v1/mall/roles',
     method: 'get',
     params: params
   })
@@ -42,21 +42,21 @@ export function deleteRole(data) {
 
 export function fetchAllRoleList() {
   return request({
-    url: '/api/v1/mall/roles/listAll',
+    url: '/learn/api/v1/mall/roles/listAll',
     method: 'get'
   })
 }
 
 export function listMenuByRole(roleId) {
   return request({
-    url: '/api/v1/mall/roles/withMenu/'+roleId,
+    url: '/learn/api/v1/mall/roles/withMenu/'+roleId,
     method: 'get'
   })
 }
 
 export function listResourceByRole(roleId) {
   return request({
-    url: '/api/v1/mall/roles/withResource/'+roleId,
+    url: '/learn/api/v1/mall/roles/withResource/'+roleId,
     method: 'get'
   })
 }

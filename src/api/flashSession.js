@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/api/v1/mall/home-flash-promotion-sessions',
+    url: '/learn/api/v1/mall/home-flash-promotion-sessions',
     method: 'get',
     params: params
   })
@@ -10,7 +10,7 @@ export function fetchList(params) {
 
 export function fetchSelectList(params) {
   return request({
-    url: '/api/v1/mall/home-flash-promotion-sessions-select',
+    url: '/learn/api/v1/mall/home-flash-promotion-sessions-select',
     method: 'get',
     params: params
   })
