@@ -1,23 +1,23 @@
 <template>
-  <el-row class="">
-    <el-col :span="5">
-      <div class="chat-brand">
-        <i class="el-icon-chat-dot-square chat-icon"></i>
-        <div class="chat-title">客服中心</div>
-      </div>
-      <component :is="currentComponent"></component>
-      <div class="chat-bottom">
-        <ul class="chat-nav">
-          <li class="nav-icon" :class="{'nav-active': item.isActive}" @click="toggleNav(item)" v-for="(item,index) in navList" :key="index">
-            <i :class="[item.icon, item.isActive ? 'icon-active' : '']"></i>
-          </li>
-        </ul>
-      </div>
-    </el-col>
-    <el-col :span="19">
-      <chat-panel></chat-panel>
-    </el-col>
-  </el-row>
+<el-row class="">
+  <el-col :span="5">
+    <div class="chat-brand">
+      <i class="el-icon-chat-dot-square chat-icon"></i>
+      <div class="chat-title">客服中心</div>
+    </div>
+    <component :is="currentComponent"></component>
+    <div class="chat-bottom">
+      <ul class="chat-nav">
+        <li class="nav-icon" :class="{'nav-active': item.isActive}" @click="toggleNav(item)" v-for="(item,index) in navList" :key="index">
+          <i :class="[item.icon, item.isActive ? 'icon-active' : '']"></i>
+        </li>
+      </ul>
+    </div>
+  </el-col>
+  <el-col :span="19">
+    <chat-panel></chat-panel>
+  </el-col>
+</el-row>
 </template>
 
 <script>
@@ -32,8 +32,7 @@ export default {
   },
   data() {
     return {
-      navList: [
-        {
+      navList: [{
           icon: 'el-icon-chat-round',
           isActive: true,
           componentName: 'msgList'
@@ -44,7 +43,8 @@ export default {
           componentName: 'friendList'
         }
       ],
-      currentComponent: 'msgList'
+      currentComponent: 'msgList',
+      websocket: null
     }
   },
   methods: {
@@ -59,6 +59,11 @@ export default {
         }
       })
     }
+  },
+  mounted() {
+    this.$socket.subscribe('aa', function(data) {
+      console.log(data)
+    })
   }
 }
 </script>
@@ -73,10 +78,12 @@ $color: #409EFF;
   border-right: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
   padding: 15px 20px;
+
   .chat-icon {
     font-size: 40px;
     color: $color;
   }
+
   .chat-title {
     color: #263a5b;
     font-size: 16px;
@@ -98,19 +105,23 @@ $color: #409EFF;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   .nav-icon {
     width: 30%;
     text-align: center;
     cursor: pointer;
     border-bottom: 2px solid transparent;
     padding: 20px 0;
+
     i {
       font-size: 22px;
     }
+
     .icon-active {
       color: $color;
     }
   }
+
   .nav-active {
     border-bottom: 2px solid $color;
   }

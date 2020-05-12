@@ -17,6 +17,16 @@ module.exports = {
         changeOrigin:true,
         pathRewrite:{
           '^/learn':'/learn/'
+        },
+        '/socket.io': {
+          target: 'http://www.kuanghuan.shop:8080',
+          ws: true,
+          changeOrigin: true
+        },
+        'sockjs-node': {
+          target: 'http://www.kuanghuan.shop:8080',
+            ws: false,
+            changeOrigin: true
         }
       }
     },
